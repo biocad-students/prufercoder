@@ -64,45 +64,45 @@
 /* Begin PBXFileReference section */
 		307FD4111D4786D100701125 /* prufercoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = prufercoder; sourceTree = BUILT_PRODUCTS_DIR; };
 		307FD4141D4786D100701125 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		307FD41D1D47876600701125 /* libGraphMol.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGraphMol.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libGraphMol.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4211D47888A00701125 /* libAlignment.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libAlignment.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libAlignment.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4221D47888A00701125 /* libCatalogs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCatalogs.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libCatalogs.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4231D47888A00701125 /* libChemicalFeatures.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemicalFeatures.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libChemicalFeatures.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4241D47888A00701125 /* libChemReactions.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemReactions.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libChemReactions.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4251D47888A00701125 /* libChemTransforms.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemTransforms.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libChemTransforms.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4261D47888A00701125 /* libDataStructs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDataStructs.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libDataStructs.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4271D47888A00701125 /* libDepictor.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDepictor.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libDepictor.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4281D47888A00701125 /* libDescriptors.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDescriptors.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libDescriptors.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4291D47888A00701125 /* libDistGeometry.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDistGeometry.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libDistGeometry.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD42A1D47888A00701125 /* libDistGeomHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDistGeomHelpers.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libDistGeomHelpers.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD42B1D47888A00701125 /* libEigenSolvers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEigenSolvers.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libEigenSolvers.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD42C1D47888A00701125 /* libFileParsers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFileParsers.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libFileParsers.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD42D1D47888A00701125 /* libFilterCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFilterCatalog.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libFilterCatalog.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD42E1D47888A00701125 /* libFingerprints.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFingerprints.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libFingerprints.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD42F1D47888A00701125 /* libFMCS.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFMCS.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libFMCS.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4301D47888A00701125 /* libForceField.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libForceField.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libForceField.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4311D47888A00701125 /* libForceFieldHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libForceFieldHelpers.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libForceFieldHelpers.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4321D47888A00701125 /* libFragCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFragCatalog.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libFragCatalog.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4331D47888A00701125 /* libhc.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhc.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libhc.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4341D47888A00701125 /* libInfoTheory.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libInfoTheory.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libInfoTheory.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4351D47888A00701125 /* libMMPA.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMMPA.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMMPA.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4361D47888A00701125 /* libMolAlign.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolAlign.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMolAlign.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4371D47888A00701125 /* libMolCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolCatalog.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMolCatalog.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4381D47888A00701125 /* libMolChemicalFeatures.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolChemicalFeatures.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMolChemicalFeatures.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4391D47888A00701125 /* libMolDraw2D.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolDraw2D.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMolDraw2D.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD43A1D47888A00701125 /* libMolHash.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolHash.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMolHash.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD43B1D47888A00701125 /* libMolTransforms.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolTransforms.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libMolTransforms.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD43C1D47888B00701125 /* libOptimizer.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOptimizer.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libOptimizer.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD43D1D47888B00701125 /* libPartialCharges.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPartialCharges.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libPartialCharges.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD43E1D47888B00701125 /* libRDBoost.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDBoost.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libRDBoost.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD43F1D47888B00701125 /* libRDGeneral.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDGeneral.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libRDGeneral.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4401D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDGeometryLib.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libRDGeometryLib.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4411D47888B00701125 /* libReducedGraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libReducedGraphs.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libReducedGraphs.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4421D47888B00701125 /* libShapeHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libShapeHelpers.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libShapeHelpers.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4431D47888B00701125 /* libSimDivPickers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSimDivPickers.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSimDivPickers.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4441D47888B00701125 /* libSmilesParse.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSmilesParse.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSmilesParse.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubgraphs.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSubgraphs.2016.03.3.dylib; sourceTree = "<group>"; };
-		307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubstructMatch.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSubstructMatch.2016.03.3.dylib; sourceTree = "<group>"; };
+		307FD41D1D47876600701125 /* libGraphMol.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGraphMol.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libGraphMol.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4211D47888A00701125 /* libAlignment.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libAlignment.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libAlignment.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4221D47888A00701125 /* libCatalogs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCatalogs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libCatalogs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4231D47888A00701125 /* libChemicalFeatures.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemicalFeatures.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libChemicalFeatures.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4241D47888A00701125 /* libChemReactions.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemReactions.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libChemReactions.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4251D47888A00701125 /* libChemTransforms.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemTransforms.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libChemTransforms.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4261D47888A00701125 /* libDataStructs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDataStructs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDataStructs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4271D47888A00701125 /* libDepictor.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDepictor.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDepictor.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4281D47888A00701125 /* libDescriptors.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDescriptors.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDescriptors.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4291D47888A00701125 /* libDistGeometry.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDistGeometry.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDistGeometry.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42A1D47888A00701125 /* libDistGeomHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDistGeomHelpers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDistGeomHelpers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42B1D47888A00701125 /* libEigenSolvers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEigenSolvers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libEigenSolvers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42C1D47888A00701125 /* libFileParsers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFileParsers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFileParsers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42D1D47888A00701125 /* libFilterCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFilterCatalog.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFilterCatalog.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42E1D47888A00701125 /* libFingerprints.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFingerprints.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFingerprints.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42F1D47888A00701125 /* libFMCS.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFMCS.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFMCS.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4301D47888A00701125 /* libForceField.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libForceField.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libForceField.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4311D47888A00701125 /* libForceFieldHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libForceFieldHelpers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libForceFieldHelpers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4321D47888A00701125 /* libFragCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFragCatalog.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFragCatalog.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4331D47888A00701125 /* libhc.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhc.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libhc.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4341D47888A00701125 /* libInfoTheory.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libInfoTheory.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libInfoTheory.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4351D47888A00701125 /* libMMPA.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMMPA.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMMPA.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4361D47888A00701125 /* libMolAlign.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolAlign.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolAlign.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4371D47888A00701125 /* libMolCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolCatalog.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolCatalog.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4381D47888A00701125 /* libMolChemicalFeatures.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolChemicalFeatures.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolChemicalFeatures.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4391D47888A00701125 /* libMolDraw2D.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolDraw2D.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolDraw2D.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43A1D47888A00701125 /* libMolHash.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolHash.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolHash.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43B1D47888A00701125 /* libMolTransforms.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolTransforms.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolTransforms.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43C1D47888B00701125 /* libOptimizer.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOptimizer.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libOptimizer.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43D1D47888B00701125 /* libPartialCharges.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPartialCharges.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libPartialCharges.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43E1D47888B00701125 /* libRDBoost.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDBoost.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libRDBoost.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43F1D47888B00701125 /* libRDGeneral.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDGeneral.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libRDGeneral.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4401D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDGeometryLib.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libRDGeometryLib.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4411D47888B00701125 /* libReducedGraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libReducedGraphs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libReducedGraphs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4421D47888B00701125 /* libShapeHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libShapeHelpers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libShapeHelpers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4431D47888B00701125 /* libSimDivPickers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSimDivPickers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSimDivPickers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4441D47888B00701125 /* libSmilesParse.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSmilesParse.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSmilesParse.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubgraphs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSubgraphs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubstructMatch.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSubstructMatch.2016.03.3.dylib; sourceTree = "<absolute>"; };
 		30C28D6C1D48D9E10014A7CE /* zinc15.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = zinc15.txt; path = data/zinc15.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -159,6 +159,32 @@
 		307FD4081D4786D100701125 = {
 			isa = PBXGroup;
 			children = (
+				30C28D6D1D48E5760014A7CE /* libs */,
+				307FD4131D4786D100701125 /* prufercoder */,
+				307FD4121D4786D100701125 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		307FD4121D4786D100701125 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				307FD4111D4786D100701125 /* prufercoder */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		307FD4131D4786D100701125 /* prufercoder */ = {
+			isa = PBXGroup;
+			children = (
+				307FD4141D4786D100701125 /* main.cpp */,
+				30C28D6C1D48D9E10014A7CE /* zinc15.txt */,
+			);
+			path = prufercoder;
+			sourceTree = "<group>";
+		};
+		30C28D6D1D48E5760014A7CE /* libs */ = {
+			isa = PBXGroup;
+			children = (
 				307FD4211D47888A00701125 /* libAlignment.2016.03.3.dylib */,
 				307FD4221D47888A00701125 /* libCatalogs.2016.03.3.dylib */,
 				307FD4231D47888A00701125 /* libChemicalFeatures.2016.03.3.dylib */,
@@ -198,26 +224,8 @@
 				307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */,
 				307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */,
 				307FD41D1D47876600701125 /* libGraphMol.2016.03.3.dylib */,
-				307FD4131D4786D100701125 /* prufercoder */,
-				307FD4121D4786D100701125 /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		307FD4121D4786D100701125 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				307FD4111D4786D100701125 /* prufercoder */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		307FD4131D4786D100701125 /* prufercoder */ = {
-			isa = PBXGroup;
-			children = (
-				307FD4141D4786D100701125 /* main.cpp */,
-				30C28D6C1D48D9E10014A7CE /* zinc15.txt */,
-			);
-			path = prufercoder;
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

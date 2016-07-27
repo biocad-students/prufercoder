@@ -196,11 +196,31 @@ void test() {
     assert(testPrufferDecoding());
 }
 
+//readign zink15.txt
+map<int, RDKit::ROMol*> getRings() {
+    map<int, RDKit::ROMol*> result;
+    fstream fin("data/zinc15.txt");
+    while (!fin.eof()) {
+        char z, i, n, k;
+        fin >> z >> i >> n >> k;
+        if (fin.eof()) {
+            break;
+        }
+        int num;
+        fin >> num;
+        string mol;
+        fin >> mol;
+        result[num] = RDKit::SmilesToMol(mol);
+    }
+    return result;
+}
+
 
 int main(int argc, const char * argv[]) {
     
     test();
     
+    getRings();
     
     RDKit::ROMol * bacteriopheophytin = RDKit::SmilesToMol("CCC1[C@@H](C)c2cc3[nH]c(cc4nc([C@@H](CCC(=O)OC\C=C(/C)CCC[C@H](C)CCC[C@@H](C)CCCC(C)C)[C@@H]4C)c4[C@@H](C(=O)OC)C(=O)c5c(C)c(cc1n2)[nH]c45)c(C)c3C(C)=O");
     
