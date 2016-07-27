@@ -103,6 +103,7 @@
 		307FD4441D47888B00701125 /* libSmilesParse.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSmilesParse.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSmilesParse.2016.03.3.dylib; sourceTree = "<group>"; };
 		307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubgraphs.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSubgraphs.2016.03.3.dylib; sourceTree = "<group>"; };
 		307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubstructMatch.2016.03.3.dylib; path = ../../../../../usr/local/Cellar/rdkit/2016.03.3/lib/libSubstructMatch.2016.03.3.dylib; sourceTree = "<group>"; };
+		30C28D6C1D48D9E10014A7CE /* zinc15.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = zinc15.txt; path = data/zinc15.txt; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				307FD4141D4786D100701125 /* main.cpp */,
+				30C28D6C1D48D9E10014A7CE /* zinc15.txt */,
 			);
 			path = prufercoder;
 			sourceTree = "<group>";
@@ -411,6 +413,7 @@
 				307FD41A1D4786D100701125 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
