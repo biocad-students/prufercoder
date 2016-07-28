@@ -12,8 +12,10 @@
 #include <GraphMol/MolOps.h>
 #include <GraphMol/Substruct/SubstructMatch.h>
 #include <GraphMol/BondIterators.h>
+#include <GraphMol/AtomIterators.h>
 #include <fstream>
 #include <boost/algorithm/string.hpp>
+#include <GraphMol/SmilesParse/SmilesWrite.h>
 
 using namespace std;
 
@@ -222,9 +224,8 @@ vector<RDKit::ROMol*> getRings() {
     }
 }*/
 
-
+const int MAX_EQUAL_RINGS_COUNT = 1000;
 vector<int> squeezeRings(RDKit::ROMol * mol, vector<RDKit::ROMol*> rings) {
-    const int MAX_EQUAL_RINGS_COUNT = 1000;
     vector<int> atomMapping(mol->getNumAtoms(), -1);
     
     for (int i = 0; i < rings.size(); ++i) {
@@ -251,7 +252,7 @@ vector<int> squeezeRings(RDKit::ROMol * mol, vector<RDKit::ROMol*> rings) {
             atomMapping[i] = i;
         }
         else {
-            atomMapping[i] += 1000;
+            atomMapping[i] += MAX_EQUAL_RINGS_COUNT;
         }
     }
     return atomMapping;
@@ -259,7 +260,6 @@ vector<int> squeezeRings(RDKit::ROMol * mol, vector<RDKit::ROMol*> rings) {
 
 //mapping numbers from 0 to n-1
 map<int, int> map0N(vector<int> &vertexes) {
-    sort(vertexes.begin(), vertexes.end());
     map<int, int> mapping;
     for (int i = 0; i < vertexes.size(); ++i) {
         mapping[vertexes[i]] = i;
@@ -267,7 +267,51 @@ map<int, int> map0N(vector<int> &vertexes) {
     return mapping;
 }
 
-vector<vector<int>> molToTree(RDKit::ROMol * mol) {
+vector<string> atomSet = {"0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Br", "Cl", "B", "C", "N", "O", "P", "S", "F", "I", "H", "+", "-"};
+
+int atomEncoding(string s) {
+    int res = 0;
+    for (int i = 0; i < atomSet.size(); ++i) {
+        if (atomSet[i] == s) {
+            return i;
+        }
+    }
+    for (int i = 1; i < s.size() - 1; ++i) {
+        for (int j = 0; j < atomSet.size(); ++j) {
+            bool match = true;
+            for (int k = 0; k < atomSet[j].size(); ++k) {
+                if (s[i + k] != atomSet[j][k]) {
+                    match = false;
+                    break;
+                }
+            }
+            if (match) {
+                res *= atomSet.size();
+                res += j;
+                i += atomSet[j].size() - 1;
+                break;
+            }
+        }
+    }
+    return -res;
+}
+
+string atomDecoding(int code) {
+    if (code > 0) {
+        return atomSet[code];
+    }
+    code *= -1;
+    string s = "]";
+    while (code > 0) {
+        s += atomSet[code % atomSet.size()];
+        code /= atomSet.size();
+    }
+    s += "[";
+    reverse(s.begin(), s.end());
+    return s;
+}
+
+pair<vector<vector<int>>, vector<int>> molToTree(RDKit::ROMol * mol) {
     vector<RDKit::ROMol*> rings = getRings();
     vector<int> atomMapping = squeezeRings(mol, rings);
     vector<pair<int, int>> edges;
@@ -319,7 +363,15 @@ vector<vector<int>> molToTree(RDKit::ROMol * mol) {
         graph[u].push_back(v);
         graph[v].push_back(u);
     }
-    return graph;
+    
+    for (int i = 0; i < vertexes.size(); ++i) {
+        if (vertexes[i] < MAX_EQUAL_RINGS_COUNT) {
+            string s = RDKit::SmilesWrite::GetAtomSmiles(mol->getAtomWithIdx(vertexes[i]));
+            vertexes[i] = atomEncoding(s);
+        }
+    }
+    
+    return make_pair(graph, vertexes);
 }
 
 bool testMatch(RDKit::ROMol * mol1, RDKit::ROMol * mol2) {
@@ -327,19 +379,42 @@ bool testMatch(RDKit::ROMol * mol1, RDKit::ROMol * mol2) {
     return RDKit::SubstructMatch(*mol1, *mol2, res);
 }
 
+void atomCodeTest() {
+    string s = "Cl";
+    int a = atomEncoding(s);
+    assert(s == atomDecoding(a));
+    
+    s = "C";
+    a = atomEncoding(s);
+    assert(s == atomDecoding(a));
+    
+    s = "[NH2+]";
+    a = atomEncoding(s);
+    assert(s == atomDecoding(a));
+    
+    s = "[13CH4]";
+    a = atomEncoding(s);
+    assert(s == atomDecoding(a));
+}
+
 int main(int argc, const char * argv[]) {
     cerr << "in main" << endl;
     
     //createRings();
     
-    test();
+    //test();
+    
+    //atomCodeTest();
     
     //getRings();
     
-    RDKit::ROMol * myMol = RDKit::SmilesToMol("CC1(C)CCC(CN2CCN(CC2)C2=CC=C(C(=O)NS(=O)(=O)C3=CC=C(NCC4CCOCC4)C(=C3)[N+]([O-])=O)C(OC3=CN=C4NC=CC4=C3)=C2)=C(C1)C1=CC=C(Cl)C=C1");
+    RDKit::ROMol * myMol = RDKit::SmilesToMol("C[C@H]1C[C@@H](C[NH2+]Cc2cc(Cl)c3c(c2)OCCCO3)CCO1");
+    /*for (auto i = myMol->beginAtoms(); i != myMol->endAtoms(); ++i) {
+        cout << RDKit::SmilesWrite::GetAtomSmiles(*i) << endl;
+    }*/
     
     //cout << testMatch(bacteriopheophytin, bacteriopheophytin);
-    auto graph = molToTree(myMol);
+    auto graph = molToTree(myMol).first;
     cout << "graph" << endl;
     for (int i = 0; i < graph.size(); ++i) {
         cout << i << " : ";
