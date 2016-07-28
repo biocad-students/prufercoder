@@ -10,10 +10,10 @@
 #include <GraphMol/GraphMol.h>
 #include <GraphMol/SmilesParse/SmilesParse.h>
 #include <GraphMol/MolOps.h>
-#include <MolDraw2DSVG.h>
-#include <MolDraw2D.h>
-#include <GraphMol/Conformer.h>
+#include <GraphMol/Substruct/SubstructMatch.h>
+#include <GraphMol/BondIterators.h>
 #include <fstream>
+#include <boost/algorithm/string.hpp>
 
 using namespace std;
 
@@ -33,16 +33,14 @@ void hangTree(int u, const vector<vector<int>> &graph, vector<int> &parent) {
 //linear time pruffer encouding
 vector<int> getPrufferCode(const vector<vector<int>> &graph) {
     
-    vector<int> parent;
-    parent.resize(graph.size());
+    vector<int> parent(graph.size());
     parent[graph.size() - 1] = -1;
     
     hangTree((int)graph.size() - 1, graph, parent);
     
     int current, pointer = -1;
     
-    vector<int> degree;
-    degree.resize(graph.size());
+    vector<int> degree(graph.size());
     
     for (int i = 0; i < graph.size(); ++i) {
         degree[i] = (int)graph[i].size();
@@ -83,8 +81,7 @@ vector<int> getPrufferCode(const vector<vector<int>> &graph) {
 vector<vector<int>> getTree(vector<int> prufferCode) {
     const int graphSize = (int) prufferCode.size() + 2;
     
-    vector<int> degree;
-    degree.resize(graphSize);
+    vector<int> degree(graphSize);
     
     for (int i = 0; i < graphSize; ++i) {
         degree[i] = 1;
@@ -102,8 +99,7 @@ vector<vector<int>> getTree(vector<int> prufferCode) {
         }
     }
     
-    vector<vector<int>> graph;
-    graph.resize(graphSize);
+    vector<vector<int>> graph(graphSize);
     
     current = pointer;
     
@@ -196,33 +192,168 @@ void test() {
     assert(testPrufferDecoding());
 }
 
-//readign zink15.txt
-map<int, RDKit::ROMol*> getRings() {
-    map<int, RDKit::ROMol*> result;
-    fstream fin("data/zinc15.txt");
+//reading rings.txt
+vector<RDKit::ROMol*> getRings() {
+    vector<RDKit::ROMol*> result;
+    ifstream fin("data/rings.txt");
     while (!fin.eof()) {
-        char z, i, n, k;
-        fin >> z >> i >> n >> k;
-        if (fin.eof()) {
-            break;
-        }
-        int num;
-        fin >> num;
         string mol;
         fin >> mol;
-        result[num] = RDKit::SmilesToMol(mol);
+        result.push_back(RDKit::SmilesToMol(mol));
     }
     return result;
 }
 
+/*void createRings() {
+    set<string> mols;
+    vector<string> names = {"frequent.txt", "common.txt", "in-man.txt", "in-drugs.txt", "endogenous.txt", "in-nature.txt"};
+    for (int i = 0; i < names.size(); ++i) {
+        ifstream fin("data/" + names[i]);
+        string s;
+        while (getline(fin, s)) {
+            vector<string> strings;
+            boost::split(strings, s, boost::is_any_of("\t"));
+            mols.insert(strings[1]);
+        }
+    }
+    ofstream fout("data/rings.txt");
+    for (auto i = mols.begin(); i != mols.end(); ++i) {
+        fout << *i << endl;
+    }
+}*/
+
+
+vector<int> squeezeRings(RDKit::ROMol * mol, vector<RDKit::ROMol*> rings) {
+    const int MAX_EQUAL_RINGS_COUNT = 1000;
+    vector<int> atomMapping(mol->getNumAtoms(), -1);
+    
+    for (int i = 0; i < rings.size(); ++i) {
+        
+        vector<RDKit::MatchVectType> match;
+        
+        if (RDKit::SubstructMatch(*mol, *rings[i], match)) {
+            
+            for (int j = 0; j < match.size(); ++j) {
+                for (int k = 0; k < match[j].size(); ++k) {
+                    
+                    if (atomMapping[match[j][k].second] == -1 || rings[i]->getNumAtoms() > rings[atomMapping[match[j][k].second] / MAX_EQUAL_RINGS_COUNT]->getNumAtoms()) {
+                        
+                        atomMapping[match[j][k].second] = i * MAX_EQUAL_RINGS_COUNT + j;
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    for (int i = 0; i < atomMapping.size(); ++i) {
+        if (atomMapping[i] == -1) {
+            atomMapping[i] = i;
+        }
+        else {
+            atomMapping[i] += 1000;
+        }
+    }
+    return atomMapping;
+}
+
+//mapping numbers from 0 to n-1
+map<int, int> map0N(vector<int> &vertexes) {
+    sort(vertexes.begin(), vertexes.end());
+    map<int, int> mapping;
+    for (int i = 0; i < vertexes.size(); ++i) {
+        mapping[vertexes[i]] = i;
+    }
+    return mapping;
+}
+
+vector<vector<int>> molToTree(RDKit::ROMol * mol) {
+    vector<RDKit::ROMol*> rings = getRings();
+    vector<int> atomMapping = squeezeRings(mol, rings);
+    vector<pair<int, int>> edges;
+    vector<int> vertexes;
+    
+    for (auto i = mol->beginBonds(); i != mol->endBonds(); ++i) {
+        unsigned int u = (*i)->getBeginAtomIdx(), v = (*i)->getEndAtomIdx();
+        
+        vertexes.push_back(atomMapping[u]);
+        vertexes.push_back(atomMapping[v]);
+        
+        if (atomMapping[u] == atomMapping[v]) {
+            continue;
+        }
+        if (atomMapping[u] < atomMapping[v]) {
+            edges.push_back(make_pair(atomMapping[u], atomMapping[v]));
+        }
+        else {
+            edges.push_back(make_pair(atomMapping[v], atomMapping[u]));
+        }
+    }
+    /*for (int i = 0; i < vertexes.size(); ++i) {
+        cout << vertexes[i] << ' ';
+    }
+    cout << endl;
+     */
+    sort(edges.begin(), edges.end());
+    auto lastEdge = unique(edges.begin(), edges.end());
+    edges.erase(lastEdge, edges.end());
+    sort(vertexes.begin(), vertexes.end());
+    auto lastVertex = unique(vertexes.begin(), vertexes.end());
+    vertexes.erase(lastVertex, vertexes.end());
+    
+    /*for (int i = 0; i < vertexes.size(); ++i) {
+        cout << vertexes[i] << ' ';
+    }
+    cout << endl;
+
+    for (int i = 0; i < edges.size(); ++i) {
+        cout << edges[i].first << " - " << edges[i].second << endl;
+    }*/
+    
+    map<int, int> mapping0N = map0N(vertexes);
+    
+    vector<vector<int>> graph(vertexes.size());
+    for (int i = 0; i < edges.size(); ++i) {
+        int u = mapping0N[edges[i].first], v = mapping0N[edges[i].second];
+        
+        graph[u].push_back(v);
+        graph[v].push_back(u);
+    }
+    return graph;
+}
+
+bool testMatch(RDKit::ROMol * mol1, RDKit::ROMol * mol2) {
+    RDKit::MatchVectType res;
+    return RDKit::SubstructMatch(*mol1, *mol2, res);
+}
 
 int main(int argc, const char * argv[]) {
+    cerr << "in main" << endl;
+    
+    //createRings();
     
     test();
     
-    getRings();
+    //getRings();
     
-    RDKit::ROMol * bacteriopheophytin = RDKit::SmilesToMol("CCC1[C@@H](C)c2cc3[nH]c(cc4nc([C@@H](CCC(=O)OC\C=C(/C)CCC[C@H](C)CCC[C@@H](C)CCCC(C)C)[C@@H]4C)c4[C@@H](C(=O)OC)C(=O)c5c(C)c(cc1n2)[nH]c45)c(C)c3C(C)=O");
+    RDKit::ROMol * myMol = RDKit::SmilesToMol("CC1(C)CCC(CN2CCN(CC2)C2=CC=C(C(=O)NS(=O)(=O)C3=CC=C(NCC4CCOCC4)C(=C3)[N+]([O-])=O)C(OC3=CN=C4NC=CC4=C3)=C2)=C(C1)C1=CC=C(Cl)C=C1");
+    
+    //cout << testMatch(bacteriopheophytin, bacteriopheophytin);
+    auto graph = molToTree(myMol);
+    cout << "graph" << endl;
+    for (int i = 0; i < graph.size(); ++i) {
+        cout << i << " : ";
+        for (int j = 0; j < graph[i].size(); ++j) {
+            cout << graph[i][j] << ' ';
+        }
+        cout << endl;
+    }
+    
+    auto res = getPrufferCode(graph);
+    cout << "prufferCode" << endl;
+    for (int i = 0; i < res.size(); ++i) {
+        cout << res[i] << ' ';
+    }
     
     /*
     //trying to get adjacency matrix
