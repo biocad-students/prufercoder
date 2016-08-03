@@ -1,0 +1,2 @@
+import Main
+print(Main.pythonFunc("CC(C)C[C@H](NC(=O)[C@@H](CC1=CNC2=CC=CC=C12)NC(=O)[C@H](CC1=CC=C(O)C=C1)NC(=O)[C@H](CO)NC(=O)[C@H](CC1=CNC2=C1C=CC=C2)NC(=O)[C@H](CC1=CNC=N1)NC(=O)[C@@H]1CCC(=O)N1)C(=O)N[C@@H](CCCNC(N)=N)C(=O)N1CCC[C@H]1C(=O)NCC(N)=O"))

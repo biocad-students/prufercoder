@@ -16,8 +16,10 @@
 #include <fstream>
 #include <boost/algorithm/string.hpp>
 #include <GraphMol/SmilesParse/SmilesWrite.h>
+#include <sstream>
 #include "pruffer.h"
 #include "atomCode.h"
+
 
 using namespace std;
 
@@ -167,6 +169,28 @@ pair<vector<vector<int>>, vector<int>> molToTree(RDKit::ROMol * mol) {
     }
     
     return make_pair(graph, vertexes);
+}
+
+//string because python can't understand vector or int * (you can't use int[])
+string pythonFunc(string s) {
+    RDKit::ROMol * myMol = RDKit::SmilesToMol(s);
+    auto data = molToTree(myMol);
+    auto graph = data.first;
+    auto res = getPrufferCode(graph);
+    res.insert(res.end(), data.second.begin(), data.second.end());
+    ostringstream stream;
+    for (int i = 0; i < res.size(); ++i) {
+        stream << res[i] << ' ';
+    }
+    return stream.str();
+}
+
+#include <boost/python.hpp>
+
+BOOST_PYTHON_MODULE(Main)
+{
+    using namespace boost::python;
+    def("pythonFunc", pythonFunc);
 }
 
 //#include "test.h"
