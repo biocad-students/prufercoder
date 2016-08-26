@@ -8,7 +8,60 @@
 
 /* Begin PBXBuildFile section */
 		307FD4151D4786D100701125 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 307FD4141D4786D100701125 /* main.cpp */; };
+		307FD41E1D47876600701125 /* libGraphMol.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD41D1D47876600701125 /* libGraphMol.2016.03.3.dylib */; settings = {ATTRIBUTES = (Required, ); }; };
+		307FD4471D47888B00701125 /* libAlignment.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4211D47888A00701125 /* libAlignment.2016.03.3.dylib */; };
+		307FD4481D47888B00701125 /* libCatalogs.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4221D47888A00701125 /* libCatalogs.2016.03.3.dylib */; };
+		307FD4491D47888B00701125 /* libChemicalFeatures.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4231D47888A00701125 /* libChemicalFeatures.2016.03.3.dylib */; };
+		307FD44A1D47888B00701125 /* libChemReactions.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4241D47888A00701125 /* libChemReactions.2016.03.3.dylib */; };
+		307FD44B1D47888B00701125 /* libChemTransforms.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4251D47888A00701125 /* libChemTransforms.2016.03.3.dylib */; };
+		307FD44C1D47888B00701125 /* libDataStructs.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4261D47888A00701125 /* libDataStructs.2016.03.3.dylib */; };
+		307FD44D1D47888B00701125 /* libDepictor.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4271D47888A00701125 /* libDepictor.2016.03.3.dylib */; };
+		307FD44E1D47888B00701125 /* libDescriptors.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4281D47888A00701125 /* libDescriptors.2016.03.3.dylib */; };
+		307FD44F1D47888B00701125 /* libDistGeometry.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4291D47888A00701125 /* libDistGeometry.2016.03.3.dylib */; };
+		307FD4501D47888B00701125 /* libDistGeomHelpers.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD42A1D47888A00701125 /* libDistGeomHelpers.2016.03.3.dylib */; };
+		307FD4511D47888B00701125 /* libEigenSolvers.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD42B1D47888A00701125 /* libEigenSolvers.2016.03.3.dylib */; };
+		307FD4521D47888B00701125 /* libFileParsers.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD42C1D47888A00701125 /* libFileParsers.2016.03.3.dylib */; };
+		307FD4531D47888B00701125 /* libFilterCatalog.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD42D1D47888A00701125 /* libFilterCatalog.2016.03.3.dylib */; };
+		307FD4541D47888B00701125 /* libFingerprints.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD42E1D47888A00701125 /* libFingerprints.2016.03.3.dylib */; };
+		307FD4551D47888B00701125 /* libFMCS.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD42F1D47888A00701125 /* libFMCS.2016.03.3.dylib */; };
+		307FD4561D47888B00701125 /* libForceField.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4301D47888A00701125 /* libForceField.2016.03.3.dylib */; };
+		307FD4571D47888B00701125 /* libForceFieldHelpers.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4311D47888A00701125 /* libForceFieldHelpers.2016.03.3.dylib */; };
+		307FD4581D47888B00701125 /* libFragCatalog.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4321D47888A00701125 /* libFragCatalog.2016.03.3.dylib */; };
+		307FD4591D47888B00701125 /* libhc.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4331D47888A00701125 /* libhc.2016.03.3.dylib */; };
+		307FD45A1D47888B00701125 /* libInfoTheory.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4341D47888A00701125 /* libInfoTheory.2016.03.3.dylib */; };
+		307FD45B1D47888B00701125 /* libMMPA.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4351D47888A00701125 /* libMMPA.2016.03.3.dylib */; };
+		307FD45C1D47888B00701125 /* libMolAlign.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4361D47888A00701125 /* libMolAlign.2016.03.3.dylib */; };
+		307FD45D1D47888B00701125 /* libMolCatalog.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4371D47888A00701125 /* libMolCatalog.2016.03.3.dylib */; };
+		307FD45E1D47888B00701125 /* libMolChemicalFeatures.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4381D47888A00701125 /* libMolChemicalFeatures.2016.03.3.dylib */; };
+		307FD45F1D47888B00701125 /* libMolDraw2D.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4391D47888A00701125 /* libMolDraw2D.2016.03.3.dylib */; };
+		307FD4601D47888B00701125 /* libMolHash.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD43A1D47888A00701125 /* libMolHash.2016.03.3.dylib */; };
+		307FD4611D47888B00701125 /* libMolTransforms.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD43B1D47888A00701125 /* libMolTransforms.2016.03.3.dylib */; };
+		307FD4621D47888B00701125 /* libOptimizer.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD43C1D47888B00701125 /* libOptimizer.2016.03.3.dylib */; };
+		307FD4631D47888B00701125 /* libPartialCharges.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD43D1D47888B00701125 /* libPartialCharges.2016.03.3.dylib */; };
+		307FD4641D47888B00701125 /* libRDBoost.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD43E1D47888B00701125 /* libRDBoost.2016.03.3.dylib */; };
+		307FD4651D47888B00701125 /* libRDGeneral.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD43F1D47888B00701125 /* libRDGeneral.2016.03.3.dylib */; };
+		307FD4661D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4401D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib */; };
+		307FD4671D47888B00701125 /* libReducedGraphs.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4411D47888B00701125 /* libReducedGraphs.2016.03.3.dylib */; };
+		307FD4681D47888B00701125 /* libShapeHelpers.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4421D47888B00701125 /* libShapeHelpers.2016.03.3.dylib */; };
+		307FD4691D47888B00701125 /* libSimDivPickers.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4431D47888B00701125 /* libSimDivPickers.2016.03.3.dylib */; };
+		307FD46A1D47888B00701125 /* libSmilesParse.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4441D47888B00701125 /* libSmilesParse.2016.03.3.dylib */; };
+		307FD46B1D47888B00701125 /* libSubgraphs.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */; };
+		307FD46C1D47888B00701125 /* libSubstructMatch.2016.03.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */; };
+		30A1F2741D4A4C40008107F6 /* pruffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30A1F2721D4A4C40008107F6 /* pruffer.cpp */; };
+		30A1F2771D4A4E84008107F6 /* atomCode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 30A1F2751D4A4E84008107F6 /* atomCode.cpp */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXBuildRule section */
+		307E47B51D5093FB00B10F21 /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			fileType = sourcecode.c;
+			isEditable = 1;
+			outputFiles = (
+			);
+			script = "# <com.apple.compilers.gcc>\n";
+		};
+/* End PBXBuildRule section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		307FD40F1D4786D100701125 /* CopyFiles */ = {
@@ -25,6 +78,50 @@
 /* Begin PBXFileReference section */
 		307FD4111D4786D100701125 /* prufercoder */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = prufercoder; sourceTree = BUILT_PRODUCTS_DIR; };
 		307FD4141D4786D100701125 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		307FD41D1D47876600701125 /* libGraphMol.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGraphMol.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libGraphMol.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4211D47888A00701125 /* libAlignment.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libAlignment.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libAlignment.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4221D47888A00701125 /* libCatalogs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libCatalogs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libCatalogs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4231D47888A00701125 /* libChemicalFeatures.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemicalFeatures.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libChemicalFeatures.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4241D47888A00701125 /* libChemReactions.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemReactions.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libChemReactions.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4251D47888A00701125 /* libChemTransforms.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libChemTransforms.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libChemTransforms.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4261D47888A00701125 /* libDataStructs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDataStructs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDataStructs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4271D47888A00701125 /* libDepictor.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDepictor.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDepictor.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4281D47888A00701125 /* libDescriptors.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDescriptors.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDescriptors.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4291D47888A00701125 /* libDistGeometry.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDistGeometry.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDistGeometry.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42A1D47888A00701125 /* libDistGeomHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libDistGeomHelpers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libDistGeomHelpers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42B1D47888A00701125 /* libEigenSolvers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libEigenSolvers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libEigenSolvers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42C1D47888A00701125 /* libFileParsers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFileParsers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFileParsers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42D1D47888A00701125 /* libFilterCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFilterCatalog.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFilterCatalog.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42E1D47888A00701125 /* libFingerprints.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFingerprints.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFingerprints.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD42F1D47888A00701125 /* libFMCS.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFMCS.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFMCS.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4301D47888A00701125 /* libForceField.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libForceField.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libForceField.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4311D47888A00701125 /* libForceFieldHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libForceFieldHelpers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libForceFieldHelpers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4321D47888A00701125 /* libFragCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libFragCatalog.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libFragCatalog.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4331D47888A00701125 /* libhc.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libhc.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libhc.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4341D47888A00701125 /* libInfoTheory.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libInfoTheory.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libInfoTheory.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4351D47888A00701125 /* libMMPA.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMMPA.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMMPA.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4361D47888A00701125 /* libMolAlign.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolAlign.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolAlign.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4371D47888A00701125 /* libMolCatalog.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolCatalog.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolCatalog.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4381D47888A00701125 /* libMolChemicalFeatures.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolChemicalFeatures.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolChemicalFeatures.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4391D47888A00701125 /* libMolDraw2D.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolDraw2D.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolDraw2D.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43A1D47888A00701125 /* libMolHash.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolHash.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolHash.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43B1D47888A00701125 /* libMolTransforms.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libMolTransforms.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libMolTransforms.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43C1D47888B00701125 /* libOptimizer.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libOptimizer.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libOptimizer.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43D1D47888B00701125 /* libPartialCharges.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libPartialCharges.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libPartialCharges.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43E1D47888B00701125 /* libRDBoost.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDBoost.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libRDBoost.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD43F1D47888B00701125 /* libRDGeneral.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDGeneral.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libRDGeneral.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4401D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libRDGeometryLib.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libRDGeometryLib.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4411D47888B00701125 /* libReducedGraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libReducedGraphs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libReducedGraphs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4421D47888B00701125 /* libShapeHelpers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libShapeHelpers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libShapeHelpers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4431D47888B00701125 /* libSimDivPickers.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSimDivPickers.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSimDivPickers.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4441D47888B00701125 /* libSmilesParse.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSmilesParse.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSmilesParse.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubgraphs.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSubgraphs.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libSubstructMatch.2016.03.3.dylib; path = /usr/local/Cellar/rdkit/2016.03.3/lib/libSubstructMatch.2016.03.3.dylib; sourceTree = "<absolute>"; };
+		30A1F2711D4A4B1D008107F6 /* test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = test.h; sourceTree = "<group>"; };
+		30A1F2721D4A4C40008107F6 /* pruffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pruffer.cpp; sourceTree = "<group>"; };
+		30A1F2731D4A4C40008107F6 /* pruffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pruffer.h; sourceTree = "<group>"; };
+		30A1F2751D4A4E84008107F6 /* atomCode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = atomCode.cpp; sourceTree = "<group>"; };
+		30A1F2761D4A4E84008107F6 /* atomCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = atomCode.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +129,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307FD4471D47888B00701125 /* libAlignment.2016.03.3.dylib in Frameworks */,
+				307FD4481D47888B00701125 /* libCatalogs.2016.03.3.dylib in Frameworks */,
+				307FD4491D47888B00701125 /* libChemicalFeatures.2016.03.3.dylib in Frameworks */,
+				307FD44A1D47888B00701125 /* libChemReactions.2016.03.3.dylib in Frameworks */,
+				307FD44B1D47888B00701125 /* libChemTransforms.2016.03.3.dylib in Frameworks */,
+				307FD44C1D47888B00701125 /* libDataStructs.2016.03.3.dylib in Frameworks */,
+				307FD44D1D47888B00701125 /* libDepictor.2016.03.3.dylib in Frameworks */,
+				307FD44E1D47888B00701125 /* libDescriptors.2016.03.3.dylib in Frameworks */,
+				307FD44F1D47888B00701125 /* libDistGeometry.2016.03.3.dylib in Frameworks */,
+				307FD4501D47888B00701125 /* libDistGeomHelpers.2016.03.3.dylib in Frameworks */,
+				307FD4511D47888B00701125 /* libEigenSolvers.2016.03.3.dylib in Frameworks */,
+				307FD4521D47888B00701125 /* libFileParsers.2016.03.3.dylib in Frameworks */,
+				307FD4531D47888B00701125 /* libFilterCatalog.2016.03.3.dylib in Frameworks */,
+				307FD4541D47888B00701125 /* libFingerprints.2016.03.3.dylib in Frameworks */,
+				307FD4551D47888B00701125 /* libFMCS.2016.03.3.dylib in Frameworks */,
+				307FD4561D47888B00701125 /* libForceField.2016.03.3.dylib in Frameworks */,
+				307FD4571D47888B00701125 /* libForceFieldHelpers.2016.03.3.dylib in Frameworks */,
+				307FD4581D47888B00701125 /* libFragCatalog.2016.03.3.dylib in Frameworks */,
+				307FD4591D47888B00701125 /* libhc.2016.03.3.dylib in Frameworks */,
+				307FD45A1D47888B00701125 /* libInfoTheory.2016.03.3.dylib in Frameworks */,
+				307FD45B1D47888B00701125 /* libMMPA.2016.03.3.dylib in Frameworks */,
+				307FD45C1D47888B00701125 /* libMolAlign.2016.03.3.dylib in Frameworks */,
+				307FD45D1D47888B00701125 /* libMolCatalog.2016.03.3.dylib in Frameworks */,
+				307FD45E1D47888B00701125 /* libMolChemicalFeatures.2016.03.3.dylib in Frameworks */,
+				307FD45F1D47888B00701125 /* libMolDraw2D.2016.03.3.dylib in Frameworks */,
+				307FD4601D47888B00701125 /* libMolHash.2016.03.3.dylib in Frameworks */,
+				307FD4611D47888B00701125 /* libMolTransforms.2016.03.3.dylib in Frameworks */,
+				307FD4621D47888B00701125 /* libOptimizer.2016.03.3.dylib in Frameworks */,
+				307FD4631D47888B00701125 /* libPartialCharges.2016.03.3.dylib in Frameworks */,
+				307FD4641D47888B00701125 /* libRDBoost.2016.03.3.dylib in Frameworks */,
+				307FD4651D47888B00701125 /* libRDGeneral.2016.03.3.dylib in Frameworks */,
+				307FD4661D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib in Frameworks */,
+				307FD4671D47888B00701125 /* libReducedGraphs.2016.03.3.dylib in Frameworks */,
+				307FD4681D47888B00701125 /* libShapeHelpers.2016.03.3.dylib in Frameworks */,
+				307FD4691D47888B00701125 /* libSimDivPickers.2016.03.3.dylib in Frameworks */,
+				307FD46A1D47888B00701125 /* libSmilesParse.2016.03.3.dylib in Frameworks */,
+				307FD46B1D47888B00701125 /* libSubgraphs.2016.03.3.dylib in Frameworks */,
+				307FD46C1D47888B00701125 /* libSubstructMatch.2016.03.3.dylib in Frameworks */,
+				307FD41E1D47876600701125 /* libGraphMol.2016.03.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +177,7 @@
 		307FD4081D4786D100701125 = {
 			isa = PBXGroup;
 			children = (
+				30C28D6D1D48E5760014A7CE /* libs */,
 				307FD4131D4786D100701125 /* prufercoder */,
 				307FD4121D4786D100701125 /* Products */,
 			);
@@ -58,8 +195,59 @@
 			isa = PBXGroup;
 			children = (
 				307FD4141D4786D100701125 /* main.cpp */,
+				30A1F2751D4A4E84008107F6 /* atomCode.cpp */,
+				30A1F2761D4A4E84008107F6 /* atomCode.h */,
+				30A1F2711D4A4B1D008107F6 /* test.h */,
+				30A1F2721D4A4C40008107F6 /* pruffer.cpp */,
+				30A1F2731D4A4C40008107F6 /* pruffer.h */,
 			);
 			path = prufercoder;
+			sourceTree = "<group>";
+		};
+		30C28D6D1D48E5760014A7CE /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				307FD4211D47888A00701125 /* libAlignment.2016.03.3.dylib */,
+				307FD4221D47888A00701125 /* libCatalogs.2016.03.3.dylib */,
+				307FD4231D47888A00701125 /* libChemicalFeatures.2016.03.3.dylib */,
+				307FD4241D47888A00701125 /* libChemReactions.2016.03.3.dylib */,
+				307FD4251D47888A00701125 /* libChemTransforms.2016.03.3.dylib */,
+				307FD4261D47888A00701125 /* libDataStructs.2016.03.3.dylib */,
+				307FD4271D47888A00701125 /* libDepictor.2016.03.3.dylib */,
+				307FD4281D47888A00701125 /* libDescriptors.2016.03.3.dylib */,
+				307FD4291D47888A00701125 /* libDistGeometry.2016.03.3.dylib */,
+				307FD42A1D47888A00701125 /* libDistGeomHelpers.2016.03.3.dylib */,
+				307FD42B1D47888A00701125 /* libEigenSolvers.2016.03.3.dylib */,
+				307FD42C1D47888A00701125 /* libFileParsers.2016.03.3.dylib */,
+				307FD42D1D47888A00701125 /* libFilterCatalog.2016.03.3.dylib */,
+				307FD42E1D47888A00701125 /* libFingerprints.2016.03.3.dylib */,
+				307FD42F1D47888A00701125 /* libFMCS.2016.03.3.dylib */,
+				307FD4301D47888A00701125 /* libForceField.2016.03.3.dylib */,
+				307FD4311D47888A00701125 /* libForceFieldHelpers.2016.03.3.dylib */,
+				307FD4321D47888A00701125 /* libFragCatalog.2016.03.3.dylib */,
+				307FD4331D47888A00701125 /* libhc.2016.03.3.dylib */,
+				307FD4341D47888A00701125 /* libInfoTheory.2016.03.3.dylib */,
+				307FD4351D47888A00701125 /* libMMPA.2016.03.3.dylib */,
+				307FD4361D47888A00701125 /* libMolAlign.2016.03.3.dylib */,
+				307FD4371D47888A00701125 /* libMolCatalog.2016.03.3.dylib */,
+				307FD4381D47888A00701125 /* libMolChemicalFeatures.2016.03.3.dylib */,
+				307FD4391D47888A00701125 /* libMolDraw2D.2016.03.3.dylib */,
+				307FD43A1D47888A00701125 /* libMolHash.2016.03.3.dylib */,
+				307FD43B1D47888A00701125 /* libMolTransforms.2016.03.3.dylib */,
+				307FD43C1D47888B00701125 /* libOptimizer.2016.03.3.dylib */,
+				307FD43D1D47888B00701125 /* libPartialCharges.2016.03.3.dylib */,
+				307FD43E1D47888B00701125 /* libRDBoost.2016.03.3.dylib */,
+				307FD43F1D47888B00701125 /* libRDGeneral.2016.03.3.dylib */,
+				307FD4401D47888B00701125 /* libRDGeometryLib.2016.03.3.dylib */,
+				307FD4411D47888B00701125 /* libReducedGraphs.2016.03.3.dylib */,
+				307FD4421D47888B00701125 /* libShapeHelpers.2016.03.3.dylib */,
+				307FD4431D47888B00701125 /* libSimDivPickers.2016.03.3.dylib */,
+				307FD4441D47888B00701125 /* libSmilesParse.2016.03.3.dylib */,
+				307FD4451D47888B00701125 /* libSubgraphs.2016.03.3.dylib */,
+				307FD4461D47888B00701125 /* libSubstructMatch.2016.03.3.dylib */,
+				307FD41D1D47876600701125 /* libGraphMol.2016.03.3.dylib */,
+			);
+			name = libs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +262,7 @@
 				307FD40F1D4786D100701125 /* CopyFiles */,
 			);
 			buildRules = (
+				307E47B51D5093FB00B10F21 /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -118,6 +307,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30A1F2741D4A4C40008107F6 /* pruffer.cpp in Sources */,
+				30A1F2771D4A4E84008107F6 /* atomCode.cpp in Sources */,
 				307FD4151D4786D100701125 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,6 +400,14 @@
 		307FD4191D4786D100701125 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/rdkit/2016.03.3/include/rdkit,
+					/usr/local/Cellar/boost/1.60.0_2/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/rdkit/2016.03.3/lib,
+					/usr/local/Cellar/boost/1.60.0_2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -216,6 +415,14 @@
 		307FD41A1D4786D100701125 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				HEADER_SEARCH_PATHS = (
+					/usr/local/Cellar/rdkit/2016.03.3/include/rdkit,
+					/usr/local/Cellar/boost/1.60.0_2/include,
+				);
+				LIBRARY_SEARCH_PATHS = (
+					/usr/local/Cellar/rdkit/2016.03.3/lib,
+					/usr/local/Cellar/boost/1.60.0_2/lib,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -239,6 +446,7 @@
 				307FD41A1D4786D100701125 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
