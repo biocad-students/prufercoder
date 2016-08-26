@@ -1,9 +1,9 @@
 import lasagne
 import numpy as np
 import theano.tensor as T
-from lasagne.layers import Gate
 from lasagne.nonlinearities import sigmoid, theano, softmax, tanh
-from tqdm import tqdm
+
+from lasagne.layers import Gate
 
 vector_len = 30
 batch_size = 20
@@ -16,7 +16,7 @@ def prepare(vector):
         for i in range(half - 1):
             res.append(0)
         res.append(vector[0] + 1)
-        for i in range(half + 1):
+        for i in range(half):
             res.append(0)
         return res
     n = int(len(vector) / 2 - 1)
@@ -30,19 +30,25 @@ def prepare(vector):
             res.append(vector[n + i])
         else:
             res.append(0)
+    try:
+        assert len(res) == vector_len
+    except:
+        print(len(res))
     return res
 
+
 def m(data):
-    dic = {0:0}
-    un_dic = []
+    dic = {0: 0}
+    un_dic = [0]
     i = 1
-    for vec in tqdm(data):
+    for vec in data:
         for elem in vec:
             if elem not in dic:
                 dic[elem] = i
                 un_dic.append(elem)
                 i += 1
     return dic, un_dic
+
 
 def prepareData(data, dic):
     res = []
@@ -55,13 +61,16 @@ def prepareData(data, dic):
         res.append(cur)
     return res
 
+
 def get_data(data, i, dic):
     cur = data[batch_size * i: batch_size * (i + 1)]
     res = prepareData(cur, dic)
     return np.array(res)
 
+
 def noise(n):
     return np.random.random(batch_size * vector_len * n).reshape(batch_size, vector_len, n)
+
 
 def get_res(arr, map):
     res = []
@@ -73,24 +82,25 @@ def get_res(arr, map):
         res.append(ans)
     return res
 
+print("prepearing data")
 
 data = [list(map(int, x.split())) for x in open("../data/modif30#1500.txt", "r").read().split('\n')]
 
 np.random.shuffle(data)
 
 newData = []
-for elem in tqdm(data):
+for elem in data:
     if len(elem) != 0:
         newData.append(prepare(elem))
 data = newData
 dict, un_dict = m(data)
 
+print("data ready")
 
-print("prepared")
-LEARNING_RATE = .01
+print("creating gan")
 
+learning_rate = .1
 
-"""
 forger_in = lasagne.layers.InputLayer(shape=(batch_size, vector_len, len(dict)))
 
 forger_lstm = lasagne.layers.LSTMLayer(forger_in, 2 * len(dict), nonlinearity=tanh)
@@ -101,28 +111,27 @@ dense = lasagne.layers.DenseLayer(reshape, len(dict), nonlinearity=softmax)
 reshape = lasagne.layers.ReshapeLayer(dense, (batch_size, vector_len, len(dict)))
 
 out = lasagne.layers.get_output(reshape)
-
 banker1_in = lasagne.layers.InputLayer((batch_size, vector_len, len(dict)))
 banker2_in = lasagne.layers.InputLayer((batch_size, vector_len, len(dict)), out)
 
 banker1 = lasagne.layers.LSTMLayer(banker1_in, 2 * len(dict), nonlinearity=tanh)
 
-forgetgate = Gate(b=banker1.b_forgetgate, W_in=banker1.W_in_to_forgetgate, W_hid=banker1.W_hid_to_forgetgate, W_cell=banker1.W_cell_to_forgetgate)
-outgate    = Gate(b=banker1.b_outgate,    W_in=banker1.W_in_to_outgate,    W_hid=banker1.W_hid_to_outgate,    W_cell=banker1.W_cell_to_outgate)
-ingate     = Gate(b=banker1.b_ingate,     W_in=banker1.W_in_to_ingate,     W_hid=banker1.W_hid_to_ingate,     W_cell=banker1.W_cell_to_ingate)
-cell       = Gate(b=banker1.b_cell,       W_in=banker1.W_in_to_cell,       W_hid=banker1.W_hid_to_cell)
-banker2 = lasagne.layers.LSTMLayer(banker2_in, 2 * len(dict), forgetgate=forgetgate, outgate=outgate, ingate=ingate, cell=cell)
+forgetgate = Gate(b=banker1.b_forgetgate, W_in=banker1.W_in_to_forgetgate, W_hid=banker1.W_hid_to_forgetgate, W_cell=banker1.W_cell_to_forgetgate, nonlinearity=banker1.nonlinearity_forgetgate)
+outgate    = Gate(b=banker1.b_outgate,    W_in=banker1.W_in_to_outgate,    W_hid=banker1.W_hid_to_outgate,    W_cell=banker1.W_cell_to_outgate,    nonlinearity=banker1.nonlinearity_outgate)
+ingate     = Gate(b=banker1.b_ingate,     W_in=banker1.W_in_to_ingate,     W_hid=banker1.W_hid_to_ingate,     W_cell=banker1.W_cell_to_ingate,     nonlinearity=banker1.nonlinearity_ingate)
+cell       = Gate(b=banker1.b_cell,       W_in=banker1.W_in_to_cell,       W_hid=banker1.W_hid_to_cell,                                            nonlinearity=banker1.nonlinearity_cell)
+banker2 = lasagne.layers.LSTMLayer(banker2_in, 2 * len(dict), forgetgate=forgetgate, ingate=ingate, outgate=outgate, cell=cell)
 
-banker1 = lasagne.layers.LSTMLayer(banker1, len(dict))
+banker1 = lasagne.layers.LSTMLayer(banker1, len(dict), nonlinearity=tanh)
 
-forgetgate = Gate(b=banker1.b_forgetgate, W_in=banker1.W_in_to_forgetgate, W_hid=banker1.W_hid_to_forgetgate, W_cell=banker1.W_cell_to_forgetgate)
-outgate    = Gate(b=banker1.b_outgate,    W_in=banker1.W_in_to_outgate,    W_hid=banker1.W_hid_to_outgate,    W_cell=banker1.W_cell_to_outgate)
-ingate     = Gate(b=banker1.b_ingate,     W_in=banker1.W_in_to_ingate,     W_hid=banker1.W_hid_to_ingate,     W_cell=banker1.W_cell_to_ingate)
-cell       = Gate(b=banker1.b_cell,       W_in=banker1.W_in_to_cell,       W_hid=banker1.W_hid_to_cell)
-banker2 = lasagne.layers.LSTMLayer(banker2, len(dict), forgetgate=forgetgate, outgate=outgate, ingate=ingate, cell=cell)
+forgetgate = Gate(b=banker1.b_forgetgate, W_in=banker1.W_in_to_forgetgate, W_hid=banker1.W_hid_to_forgetgate, W_cell=banker1.W_cell_to_forgetgate, nonlinearity=banker1.nonlinearity_forgetgate)
+outgate    = Gate(b=banker1.b_outgate,    W_in=banker1.W_in_to_outgate,    W_hid=banker1.W_hid_to_outgate,    W_cell=banker1.W_cell_to_outgate,    nonlinearity=banker1.nonlinearity_outgate)
+ingate     = Gate(b=banker1.b_ingate,     W_in=banker1.W_in_to_ingate,     W_hid=banker1.W_hid_to_ingate,     W_cell=banker1.W_cell_to_ingate,     nonlinearity=banker1.nonlinearity_ingate)
+cell       = Gate(b=banker1.b_cell,       W_in=banker1.W_in_to_cell,       W_hid=banker1.W_hid_to_cell,                                            nonlinearity=banker1.nonlinearity_cell)
+banker2 = lasagne.layers.LSTMLayer(banker2, len(dict), forgetgate=forgetgate, ingate=ingate, outgate=outgate, cell=cell)
 
 banker1 = lasagne.layers.DenseLayer(banker1, 1, nonlinearity=sigmoid)
-banker2 = lasagne.layers.DenseLayer(banker1, 1, nonlinearity=sigmoid, W=banker1.W, b=banker1.b)
+banker2 = lasagne.layers.DenseLayer(banker2, 1, nonlinearity=sigmoid, W=banker1.W, b=banker1.b)
 
 banker1_out = lasagne.layers.get_output(banker1)
 banker2_out = lasagne.layers.get_output(banker2)
@@ -133,177 +142,89 @@ banker_cost = (T.log(banker1_out) + T.log(1 - banker2_out)).mean()
 forger_params = lasagne.layers.get_all_params(reshape, trainable=True)
 banker_params = lasagne.layers.get_all_params(banker1, trainable=True)
 
-forger_updates = lasagne.updates.adagrad(1 - forger_cost, forger_params, LEARNING_RATE)
-banker_updates = lasagne.updates.adagrad(1 - banker_cost, banker_params, LEARNING_RATE)
+forger_updates = lasagne.updates.adagrad(1 - forger_cost, forger_params, learning_rate)
+banker_updates = lasagne.updates.adagrad(1 - banker_cost, banker_params, learning_rate)
 
-forgerTrain = theano.function([forger_in.input_var], forger_cost, updates=forger_updates)
-bankerTrain = theano.function([forger_in.input_var, banker1_in.input_var], banker_cost, updates=banker_updates)
-"""
+forgerTrain = theano.function([forger_in.input_var], forger_cost, updates=forger_updates, allow_input_downcast=True)
+bankerTrain = theano.function([forger_in.input_var, banker1_in.input_var], banker_cost, updates=banker_updates,
+                              allow_input_downcast=True)
 
-forger_in = lasagne.layers.InputLayer(shape=(batch_size, vector_len, len(dict)))
+res = theano.function([forger_in.input_var], out, allow_input_downcast=True)
 
-forger_lstm = lasagne.layers.LSTMLayer(forger_in, 2 * len(dict), nonlinearity=tanh)
-forger_lstm = lasagne.layers.LSTMLayer(forger_lstm, len(dict), nonlinearity=tanh)
-
-reshape = lasagne.layers.ReshapeLayer(forger_lstm, (batch_size * vector_len, len(dict)))
-dense = lasagne.layers.DenseLayer(reshape, len(dict), nonlinearity=softmax)
-reshape = lasagne.layers.ReshapeLayer(dense, (batch_size, vector_len, len(dict)))
-
-out = lasagne.layers.get_output(reshape)
-
-banker1_in = lasagne.layers.InputLayer((batch_size, vector_len, len(dict)))
-banker2_in = lasagne.layers.InputLayer((batch_size, vector_len, len(dict)), out)
-
-banker3 = lasagne.layers.LSTMLayer(banker1_in, 2 * len(dict), nonlinearity=tanh)
-
-banker2 = lasagne.layers.LSTMLayer(banker3, len(dict), nonlinearity=tanh)
-
-#banker2 = lasagne.layers.BatchNormLayer(banker2)
-
-banker1 = lasagne.layers.DenseLayer(banker2, 1, nonlinearity=sigmoid)
-
-banker1_out = lasagne.layers.get_output(banker1)
-banker2_out = lasagne.layers.get_output(banker1, out)
-
-forger_cost = (T.log(banker2_out)).mean()
-banker_cost = (T.log(banker1_out) + T.log(1 - banker2_out)).mean()
-
-"""
-forger_cost = (banker2_out).mean()
-banker_cost = (banker1_out.mean() * (1 - banker2_out.mean()))
-"""
-forger_params = lasagne.layers.get_all_params(reshape, trainable=True)
-banker_params = lasagne.layers.get_all_params(banker1, trainable=True)
-
-forger_updates = lasagne.updates.adagrad(1 - forger_cost, forger_params, LEARNING_RATE)
-banker_updates = lasagne.updates.adagrad(1 - banker_cost, banker_params, LEARNING_RATE)
-
-forgerTrain = theano.function([forger_in.input_var], forger_cost, updates=forger_updates)
-bankerTrain = theano.function([forger_in.input_var, banker1_in.input_var], banker_cost, updates=banker_updates)
-
-res = theano.function([forger_in.input_var], out)
+test_func = theano.function([forger_in.input_var], banker2_out.mean(), allow_input_downcast=True)
+test_banker = theano.function([banker1_in.input_var], banker1_out.mean(), allow_input_downcast=True)
 
 print("gan ready")
+print("train started")
+trainlen = 20000
+iter = 0
+exceptions = 0
 
-import math
 
-f1 = theano.function([forger_in.input_var], banker2_out)
-f2 = theano.function([banker1_in.input_var], banker1_out)
-f1l1 = theano.function([forger_in.input_var], lasagne.layers.get_output(banker3, out))
-f2l1 = theano.function([banker1_in.input_var],lasagne.layers.get_output(banker3))
-f1l2 = theano.function([forger_in.input_var], lasagne.layers.get_output(banker2, out))
-f2l2 = theano.function([banker1_in.input_var], lasagne.layers.get_output(banker2))
-"""
-def show(i):
-    print("FIRST LSTM")
-    print(i)
-    print("IN IN")
-    print(banker3.W_in_to_ingate.get_value())
-    print("CELL IN")
-    print(banker3.W_cell_to_ingate.get_value())
-    print("HID IN")
-    print(banker3.W_hid_to_ingate.get_value())
-    print("IN CELL")
-    print(banker3.W_in_to_cell.get_value())
-    print("HID CELL")
-    print(banker3.W_hid_to_cell.get_value())
-    print("IN FOR")
-    print(banker3.W_in_to_forgetgate.get_value())
-    print("CELL FOR")
-    print(banker3.W_cell_to_forgetgate.get_value())
-    print("HID FOR")
-    print(banker3.W_hid_to_forgetgate.get_value())
-    print("IN OUT")
-    print(banker3.W_in_to_outgate.get_value())
-    print("CELL OUT")
-    print(banker3.W_cell_to_outgate.get_value())
-    print("HID OUT")
-    print(banker3.W_hid_to_outgate.get_value())
-    print("B CELL")
-    print(banker3.b_cell.get_value())
-    print("B FOR")
-    print(banker3.b_forgetgate.get_value())
-    print("B OUT")
-    print(banker3.b_outgate.get_value())
-    print("B IN")
-    print(banker3.b_ingate.get_value())
-    print("SECOND LSTM")
-    print(i)
-    print("IN IN")
-    print(banker2.W_in_to_ingate.get_value())
-    print("CELL IN")
-    print(banker2.W_cell_to_ingate.get_value())
-    print("HID IN")
-    print(banker2.W_hid_to_ingate.get_value())
-    print("IN CELL")
-    print(banker2.W_in_to_cell.get_value())
-    print("HID CELL")
-    print(banker2.W_hid_to_cell.get_value())
-    print("IN FOR")
-    print(banker2.W_in_to_forgetgate.get_value())
-    print("CELL FOR")
-    print(banker2.W_cell_to_forgetgate.get_value())
-    print("HID FOR")
-    print(banker2.W_hid_to_forgetgate.get_value())
-    print("IN OUT")
-    print(banker2.W_in_to_outgate.get_value())
-    print("CELL OUT")
-    print(banker2.W_cell_to_outgate.get_value())
-    print("HID OUT")
-    print(banker2.W_hid_to_outgate.get_value())
-    print("B CELL")
-    print(banker2.b_cell.get_value())
-    print("B FOR")
-    print(banker2.b_forgetgate.get_value())
-    print("B OUT")
-    print(banker2.b_outgate.get_value())
-    print("B IN")
-    print(banker2.b_ingate.get_value())
-val = []
-i = 0
-for i in range(10):
-    print(i)
-    val = noise(len(dict))
-    print(f1(val))
-    print(f2(vect[i]))
-    print(f1l1(val))
-    print(f2l1(vect[i]))
-    print(f1l2(val))
-    print(f2l2(vect[i]))
-    if math.isnan(bankerTrain(val, vect[i])):
-        break
-    #show(i)
-#bankerTrain(noise(len(dict)), vect[0:batch_size])
-"""
-epochs = 5000
+def calc(x):
+    return 1200 * (x - 0.5) * (x - 0.5)
 
-for k in tqdm(range(epochs)):
+test_res = []
+bank_res = []
+banker_train = []
+forger_train = []
+
+for k in range(trainlen):
     try:
-        j = k + 2000
-        dat = get_data(data, j, dict)
+        dat = get_data(data, iter, dict)
+        iter += 1
         val = noise(len(dict))
-        res1 = bankerTrain(val, dat)
-        for i in tqdm(range(10)):
+        bankerTrain(val, dat)
+        val = noise(len(dict))
+        forgerTrain(val)
+        val = noise(len(dict))
+        test = test_func(val)
+        if test > 0.5:
+            test = np.math.floor(calc(test))
+            if (k < 500) :
+                test = 1
+            banker_train.append(test)
+            forger_train.append(1)
+            for i in range(test):
+                dat = get_data(data, iter, dict)
+                iter += 1
+                val = noise(len(dict))
+                bankerTrain(val, dat)
+        elif test < 0.5:
+            banker_train.append(1)
+            test = np.math.floor(calc(test))
+            forger_train.append(test)
+            for i in range(test):
+                val = noise(len(dict))
+                forgerTrain(val)
+        else:
+            banker_train.append(1)
+            forger_train.append(1)
+        if k % 10 == 0:
+            learning_rate *= .99
+            dat = get_data(data, iter, dict)
+            iter += 1
             val = noise(len(dict))
-            res2 = forgerTrain(val)
-        if res1 == 0 or res1 == 1 or res2 == 0 or res2 == 1:
-            print(f1(val))
-            print(f2(dat))
-            print(f1l1(val))
-            print(f2l1(dat))
-            print(f1l2(val))
-            print(f2l2(dat))
-    except:
-        continue
+            test_res.append(test_func(val))
+            bank_res.append(test_banker(dat))
+            print(k)
+            print('test')
+            print(test_res[-1])
+            print('bank')
+            print(bank_res[-1])
+            print('forger total')
+            print(sum(forger_train))
+            print('banker total')
+            print(sum(banker_train))
+    except Exception as ex:
+        exceptions += 1
+        print("Wow, you have an exception there!")
+        print(ex)
+        print("total number of exceptions is:")
+        print(exceptions)
 
+print("train ended")
 """
-epochs = 5
-k = 10
-
-for i in tqdm(range(epochs)):
-    print(i)
-    for j in tqdm(range(k)):
-        print('#')
-        print(bankerTrain(noise(len(dict)), vect[(i * k + j) * batch_size: (i * k + j + 1) * batch_size]))
-    print('*')
-    print(forgerTrain(noise(len(dict))))"""
+#code for vector generation
+val = noise(len(dict))
+get_res(res(val), un_dict)"""
