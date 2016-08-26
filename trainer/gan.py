@@ -7,7 +7,6 @@ from lasagne.layers import Gate
 
 vector_len = 30
 batch_size = 20
-data_size = 10000
 
 def prepare(vector):
     res = []
